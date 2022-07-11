@@ -1,0 +1,74 @@
+<!--
+	8005번 post가 충돌나서 웹 프로그램이 실행되지 않으면 cmd 실행해서 커맨드 창을 열고 아래의 명령을 실행한다.
+	netstat -p tcp -ano
+	...
+	TCP    127.0.0.1:5939         0.0.0.0:0              LISTENING       3620
+	TCP    127.0.0.1:8005         0.0.0.0:0              LISTENING       15096(매번 변경될 수 있다.)
+	TCP    127.0.0.1:9090         127.0.0.1:52910        TIME_WAIT       0
+	TCP    127.0.0.1:37014        0.0.0.0:0              LISTENING       3620
+	...
+	실행중인 프로세스와 그 프로세스가 사용하는 PID가 보인다.
+	8005번 port를 사용하는 프로세스를 강제로 종료하면 post 충돌이 발생되지 않는다.
+	8005번 port를 사용하는 PID를 확인 후 아래 명령을 실행해서 강제로 종료한다.
+	taskkill /f /pid 15096
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!--
+	name="viewport": 접속한 장치의 해상도에 맞게 웹 사이트를 보여주겠다는 의미이다.
+	content="width=device-width, initial-scale=1.0": 웹 사이트의 너비는 웹 사이트를 보는 장치에 맞게
+	사용한다는 의미이다.
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>부트스트랩 웹 페이지</title>
+<link rel="stylesheet" href="./css/bootstrap.css"/>
+<link rel="icon" href="./images/logo.png"/>
+
+<style type="text/css">
+
+	.jumbotron {
+		background-image: url(./images/jumbotronBackground.jpg);
+		background-size: cover;
+		color: white;
+		text-shadow: 0.2em 0.2em 0.2em black;
+	}
+
+</style>
+
+</head>
+<body>
+
+<!--
+	점보트론(jumbotron)
+	대형 전광판을 의미하는 단어로 부트스트랩에서 홈페이지를 소개하는 메인 전광판이 되며 컴포넌트 중에 가장
+	돋보이는 컴포넌트로 사용법도 간단하고 버튼 등 다양한 컴포넌트를 포함할 수 있다.
+-->
+
+<div class="container">
+	<div class="jumbotron">
+		<h1 class="text-center">날로 먹는 코딩 온라인 강좌 사이트</h1>
+		<p class="text-center">
+			날로 먹는 코딩은 IT 교육 사이트입니다. 다양한 날로 먹는 IT 관련 강의가 존재합니다.
+		</p>
+		<p class="text-center">
+			<!-- role: 개별 태그의 역할을 정의한다. -->
+			<a class="btn btn-primary btn-lg" href="#" role="button">강의 들으러 가기</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
