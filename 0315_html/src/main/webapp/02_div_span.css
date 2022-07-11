@@ -1,0 +1,14 @@
+div {
+	background: blue; /* 배경색 */
+	width: 200px; /* 폭 */
+	height: 50px; /* 높이 */
+	margin: 20px; /* 바깥여백 */
+	padding: 20px; /* 안여백 */
+}
+span {
+	background-color: cyan;
+	width: 200px;
+	height: 50px;
+	margin: 20px;
+	padding: 20px;
+}

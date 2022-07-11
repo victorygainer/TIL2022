@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!--
+	<form> 태그는 입력된 정보를 제출(전송)하기 위한 대화명 컨트롤을 포함하는 문서 구역을 만든다.
+	웹 서버에 정보를 제출하기 위한 양식의 범위를 정의한다.
+	<form>이 다른 <form>을 자식 요소로 가질수 없다. <form>에 <form>이 포함되면 안된다.
+	action 속성은 submit 버튼이 클릭된 폼에 입력된 정보를 처리할 웹 페이지의 url을 적는다.
+	method 속성은 서버로 데이터를 전송하는 방식을 지정한다. get(기본값), post 방식이 있다.
+	get 방식은 전송되는 데이터가 url창에 표시되고 post 방식은 url창에 표시되지 않는다.
+	name 속성은 컨트롤의 이름을 지정한다. name에 지정한 속성 값에 데이터가 저장되서 action 페이지로 전송된다.
+	novalidate="novalidate" 옵션을 지정하면 데이터 양식의 유효성 검사를 실행하지 않는다.
+	autocomplete="off" 옵션을 지정하면 자동 완성 기능을 지원하지 않는다.
+	target="_blank" 옵션을 지정하면 정보를 전송하는 페이지를 새 창으로 띄운다.
+-->
+
+	<form action="?" method="post">
+		<input type="email" name="email"/>
+		<input type="password" name="password"/>
+		<!-- <input type="submit" value="로그인"/> -->
+		<button type="submit">로그인</button>
+	</form>
+
+</body>
+</html>
+
+
+
+
+
+
+

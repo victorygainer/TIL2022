@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!--
+	<input> 태그에 type="hidden" 속성을 사용하면 컨트롤이 화면에 표시되지 않는다.
+	<form>에 hidden 속성을 지정하면 폼 전체가 화면에 표시되지 않는다.
+-->
+
+	<!--
+	<form action="?" method="post">
+		이름: <input type="text" name="name"/><br/>
+		아이디: <input type="hidden" name="id"/>
+	</form>
+	-->
+	
+	<form action="?" method="post" hidden>
+		숨겨진 양식들....
+		이름: <input type="text" name="name"/><br/>
+		아이디: <input type="hidden" name="id"/>
+	</form>
+
+	<!-- draggable="true" 속성을 지정하면 택스트를 드래그 할 수 없다. -->
+	<div draggable="true">드래그 해 보세요~~~~~~</div>
+	<div>드래그 해 보세요~~~~~~</div>
+
+<!--
+	tabindex 속성은 Tab 키를 이용해 순차적으로 포커스를 이동시키는 순서를 지정한다.
+-->
+
+	<input type="text" value="1" tabindex="3">
+	<input type="text" value="2" tabindex="-1">
+	<input type="text" value="3" tabindex="1">
+	<input type="text" value="4" tabindex="4">
+	<input type="text" value="5" tabindex="5">
+
+</body>
+</html>
+
+
+
+
+
+

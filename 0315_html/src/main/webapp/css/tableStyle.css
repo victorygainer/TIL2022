@@ -1,0 +1,19 @@
+table {
+	/* 셀 사이의 빈 여백을 없애고 셀이 합쳐지게 한다. */
+	border-collapse: collapse;
+}
+
+tr {
+	height: 50px;
+}
+
+th {
+	background-color: yellowgreen;
+	border: 1px solid;
+	padding: 10px;
+}
+
+td {
+	border: 1px solid;
+	padding: 10px;
+}

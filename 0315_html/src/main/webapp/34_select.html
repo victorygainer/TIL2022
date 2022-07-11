@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!--
+	<select> 태그는 옵션 메뉴(콤보 상자, 리스트 상자)를 만든다.
+	<option> 태그를 이용해서 선택할 수 있는 옵션 목록을 만든다.
+	<select> 태그의 너비는 가장 긴 텍스트를 입력한 <option> 태그에 맞춰서 자동으로 조절된다.
+	<select> 태그의 너비를 지정하고 싶다면 style="width: 200px;" 스타일을 사용한다.
+	<select> 태그에 size 속성으로 표시되는 목록의 개수를 정할 수 있다.
+	목록의 개수보다 <option> 태그가 많으면 스크롤 바가 표시된다.
+	<select> 태그에 multiple="multiple" 속성을 지정하면 목록 상자가 표시된다. 다중 선택이 가능하다.
+	multiple="multiple" 속성을 지정하고 size 속성을 지정하지 않으면 기본값으로 4개의 목록이 표시된다.
+	<option> 태그에 selected="selected" 속성을 지정하면 기본적으로 선택되게 할 수 있다.
+-->
+
+	<!-- 콤보 상자 -->
+	먹고싶은 과일은?<br/>
+	<select name="fruits1" style="width: 200px;">
+		<option>Apple</option>
+		<option>Banana</option>
+		<option>Orange</option>
+		<option>Mango</option>
+		<option>Melon</option>
+		<option selected="selected">Water Melon</option>
+	</select><br/>
+
+	<!-- 목록 상자 -->
+	먹고싶은 과일은?<br/>
+	<select name="fruits2" style="width: 200px;" multiple="multiple" size="6">
+		<option>Apple</option>
+		<option>Banana</option>
+		<option>Orange</option>
+		<option>Mango</option>
+		<option>Melon</option>
+		<option selected="selected">Water Melon</option>
+	</select><br/>
+
+<!--
+	<optgroup> 태그는 <select> 태그를 구성하는 항목인 <option> 태그를 그룹으로 묶는다.
+-->
+
+	먹고싶은 과일은?<br/>
+	<select name="fruits3">
+		<optgroup label="과일1">
+			<option>Apple</option>
+			<option>Banana</option>
+			<option>Orange</option>
+		</optgroup>
+		<optgroup label="과일2">
+			<option>Mango</option>
+			<option>Melon</option>
+			<option>Water Melon</option>
+		</optgroup>
+	</select><br/>
+
+<!--
+	<datalist> 태그는 다른 컨트롤에서 선택할 수 있는 요소를 만든다.
+	다른 컨트롤에 list 속성으로 <datalist> 태그의 id와 견결한다.
+-->
+
+	먹고싶은 과일은? <input type="text" name="fruits4" list="fruits"><br/>
+	
+	<datalist id="fruits">
+		<option>Apple</option>
+		<option>Banana</option>
+		<option>Orange</option>
+		<option>Mango</option>
+		<option>Melon</option>
+		<option>Water Melon</option>
+	</datalist>
+
+</body>
+</html>
+
+
+
+
+
+
+
