@@ -82,3 +82,4 @@ servlet-context.xml 파일의 SqlSessionFactoryBean 클래스 bean 설정에 아
 	<beans:property name="mapperLocations" value="classpath:kr/koreait/dao/*.xml"></beans:property>
 	<beans:property name="configLocation" value="classpath:mybatis-config.xml"></beans:property> <!-- 요거를 코딩한다. -->
 </beans:bean>
+
