@@ -1,0 +1,61 @@
+<div id="comment-new" class="card m-2">
+    <div class="card-body">
+        <!-- 댓글 작성 폼 -->
+        <form>
+            <!-- 닉네임 입력 -->
+            <div class="mb-3">
+                <label class="form-label">닉네임</label>
+                <input id="new-comment-nickname" class="form-control form-control-sm" type="text"/>
+            </div>
+            <!-- 댓글 입력 -->
+            <div class="mb-3">
+                <label class="form-label">내용</label>
+                <textarea id="new-comment-body" class="form-control form-control-sm"
+                          rows="3" style="resize: none;"></textarea>
+            </div>
+            <!-- 댓글이 어떤 메인글의 댓글인가 알려주기 위해 메인글의 id를 hidden으로 전달한다.-->
+            <input type="hidden" id="new-comment-article-id" value="{{article.id}}">
+
+            <button type="button" id="comment-create-btn" class="btn btn-outline-warning btn sm"
+                   style="font-size: 14px;">저장하기</button>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    {
+        const commentCreateBtn = document.querySelector("#comment-create-btn");
+        //addEventListner('event', 콜백 함수)
+        commentCreateBtn.addEventListener('click', () => {
+            // console.log('저장버튼이 클릭되었습니다.');
+            // 댓글 객체를 생성한다.
+            const comment = {
+                nickname : document.querySelector("#new-comment-nickname").value,
+                body : document.querySelector("#new-comment-body").value,
+                article_id : document.querySelector("#new-comment-article-id").value
+            };
+            // console.log(comment);
+
+            // 컨트롤러에 요청 할 url을 만든다
+            // @PostMapping("/api/comments/{articleId}/comments")
+            const url = '/api/comments/' + comment.article_id + '/comments';
+            //console.log(url);
+
+            // fetch ajax를 이용해서 REST api를 호출한다
+            fetch(url, {
+                method: 'POST', //컨트롤러에 POST 방식으로 요청한다.
+                body: JSON.stringify(comment), // comment 객체를 json으로 변경한다.
+                headers: {
+                    'Content-Type' : 'application/json' // 컨트롤러로 json 형태의 데이터가 넘어감을 지정한다.
+                }
+            }).then(response => {
+                // http 응답 코드에 따른 메시지 출력
+                const msg = response.ok ? '댓글이 등록되었습니다.' : '댓글 등록에 실패했습니다.';
+                alert(msg);
+                // 현재 페이지를 새로고침 한다.
+                location.reload();
+            });
+        });
+    }
+</script>
+

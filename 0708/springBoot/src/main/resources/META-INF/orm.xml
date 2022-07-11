@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- orm native query orm.xml example를 구글링해서 entity-mappings를 사용한다. -->
+<entity-mappings
+        xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+        version="2.0">
+
+	<!-- name: 메소드 이름 -->
+	<!-- result-class: sql 명령 실행 후 리턴되는 데이터 타입 -->
+	<named-native-query name="Comment.findByNickname" result-class="com.tjoeun.springBoot.entity.Comment">
+		<query>
+			<![CDATA[
+				select * from comment where nickname = :nickname
+			]]>
+		</query>
+	</named-native-query>
+
+</entity-mappings>

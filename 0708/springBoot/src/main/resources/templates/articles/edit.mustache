@@ -1,0 +1,25 @@
+{{>./layouts/header}}
+
+{{#article}}
+<!--
+	데이터를 수정해야 하므로 method는 put을 사용해야 하지만 예전에 만들어진 규격인 form 태그는 method 속성에
+	get과 post 방식만 사용할 수 있기 때문에 임시로 post 방식을 사용한다.
+-->
+<form class="container p-5" action="/articles/update" method="post">
+	<!-- 수정할 글의 id를 컨트롤러로 전달하기 위해서 hidden으로 추가한다. -->
+	<input type="hidden" name="id" value="{{id}}"/>
+	<div class="mb-3">
+		<label class="form-label">제목</label>
+		<input class="form-control" type="text" name="title" value="{{title}}"/>
+	</div>
+	<div class="mb-3">
+		<label class="form-label">내용</label>
+		<textarea class="form-control" rows="3" name="content" 
+			style="resize: none;">{{content}}</textarea>
+	</div>
+	<button type="submit" class="btn btn-success" style="font-size: 14px;">수정하기</button>
+	<a href="/articles/{{id}}" class="btn btn-outline-primary" style="font-size: 14px;">돌아가기</a>
+</form>
+{{/article}}
+
+{{>./layouts/footer}}
