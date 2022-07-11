@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아이디 중복 검사</title>
+</head>
+<!--
+	onload 이벤트는 브라우저에 표시가 다 되면 실행되는 이벤트이다.
+	자식 창이 열릴 때 부모 창의 데이터를 가져오려면 onload 이벤트를 이용한다.
+-->
+<body onload="requestID()">
+	
+	<h1>javascript_20_윈도우2.html</h1>
+	
+	ID: <input id="childID" type="text" readonly="readonly"/><br/>
+	<input type="button" value="부모 창으로 전달" onclick="sendID1()"/><br/>
+	<input type="button" value="창을 닫을 때 부모 창으로 전달" onclick="sendID2()"/><br/>
+	<!-- self는 현재 윈도우를 의미한다. -->
+	<input type="button" value="창 닫기" onclick="self.close()"/>
+
+	<script type="text/javascript" src="./js/javascript20.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

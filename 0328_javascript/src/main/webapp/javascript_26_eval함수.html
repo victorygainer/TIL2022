@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>eval 함수</title>
+</head>
+<body>
+
+	<p>
+		<h2>문자열로된 코드를 읽어서 자바스크립트로 실행하기</h2>
+		<input type="text" name="evalValue" placeholder="예) 5 + 10"/>
+		<input type="button" value="계산하기" onclick="evalTest()"/><br/>
+		<span></span>
+	</p>
+
+	<p>
+		<input class="cal" type="number" value="0" size="3"/>
+		<!--
+		<select class="cal">
+			<option>+</option>
+			<option>-</option>
+			<option>*</option>
+			<option>/</option>
+		</select>
+		-->
+		<input class="cal" type="text" size="3" list="calList"/>
+		<input class="cal" type="number" value="0" size="3"/>
+		<input type="button" value="계산하기" onclick="calTest()"/>
+		<span></span>
+	</p>
+
+	<!-- datalist 태그로 목록을 만들어서 id를 text 상자에 list 속성으로 연결하면 콤보박스가 구현된다. -->
+	<datalist id="calList">
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+	</datalist>
+
+	<script type="text/javascript" src="./js/javascript26.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
