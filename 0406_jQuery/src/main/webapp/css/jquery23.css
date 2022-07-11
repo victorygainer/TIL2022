@@ -1,0 +1,45 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	width: 1000px;
+	margin: 50px auto;
+}
+
+fieldset {
+	width: 250px;
+	height: 50px;
+	padding: 10px 10px;
+	margin: 20px 0px;
+}
+
+table {
+	width: 450px;
+	border: 1px solid black;
+}
+
+td {
+	padding: 5px 10px;
+}
+
+input {
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+/* tbody 태그가 자동으로 생성되서 tr 태그는 table 태그의 자손이 된다. */
+table tr:nth-child(odd) {
+	background-color: hotpink;
+}
+
+table tr:nth-child(even) {
+	background-color: skyblue;
+}
+
+
+
+
+
+

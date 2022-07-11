@@ -1,0 +1,28 @@
+a {
+	color: white;
+	text-decoration: none;
+}
+
+.menu {
+	background-color: black;
+	width: 150px;
+	border: 1px solid yellow;
+	transition: 0.5s;
+}
+
+.menu:hover {
+	background-color: hotpink;
+	width: 300px;
+}
+
+div {
+	color: yellow;
+}
+
+div:hover, a:hover {
+	background-color: dodgerblue;
+	color: skyblue;
+	text-decoration: none;
+}
+
+

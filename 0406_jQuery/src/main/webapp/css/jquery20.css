@@ -1,0 +1,42 @@
+body {
+	margin: 0;
+}
+
+img {
+	width: 150px;
+	height: 150px;
+	float: left;
+}
+
+#menubox {
+	position: relative;
+}
+
+.select {
+	width: 140px;
+	height: 140px;
+	border: 5px solid tomato;
+	position: absolute;
+	left: 300px;
+}
+
+#menu {
+	overflow: auto;
+}
+
+button {
+	width: 150px;
+	height: 50px;
+	font-size: 20pt;
+	margin-left: 300px;
+}
+
+
+
+
+
+
+
+
+
+

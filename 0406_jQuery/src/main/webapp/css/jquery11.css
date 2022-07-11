@@ -1,0 +1,34 @@
+p {
+	width: 150px;
+	border: 2px solid skyblue;
+	cursor: pointer;
+	position: absolute;
+	left: 10px;
+	display: none;
+}
+
+img {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 200px;
+	top: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

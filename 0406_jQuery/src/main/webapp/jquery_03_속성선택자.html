@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성 선택자</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+	<h2>이미지 크기를 모두 200px * 200px로 설정하기</h2>
+	<button type="button" onclick="imgSize()">클릭</button>
+	<h2>이미지 중에서 id 속성이 selId인 이미지 숨기기</h2>
+	<button type="button" onclick="idSelector()">클릭</button>
+	<h2>이미지 중에서 class 속성이 selClass인 이미지 투명도 변경하기</h2>
+	<button type="button" onclick="classSelector()">클릭</button>
+	<h2>이미지 중에서 title 속성값에 '02'가 포함된 이미지 투명도 변경하기</h2>
+	<button type="button" onclick="includeSelector()">클릭</button>
+	<h2>이미지 바꾸기</h2>
+	<button type="button" onclick="changeImg()">클릭</button>
+	
+	<table>
+		<tr>
+			<td><img id="selId" title="img01+" src="./images/img01.jpg"/></td>		
+			<td><img title="img02" src="./images/img02.jpg"/></td>		
+			<td><img class="selClass" title="img023+" src="./images/img03.jpg"/></td>		
+			<td><img class="selClass" title="img04" src="./images/img04.jpg"/></td>		
+		</tr>
+		<tr>
+			<td><img id="selId" title="img01-img01" src="./images/img01.jpg"/></td>		
+			<td><span><img title="image02 img02" src="./images/img02.jpg"/></span></td>		
+			<td><img class="selClass" title="img023" src="./images/img03.jpg"/></td>		
+			<td><img class="selClass" title="img04-img04" src="./images/img04.jpg"/></td>		
+		</tr>
+	</table>
+
+	<script type="text/javascript" src="./js/jquery03.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
