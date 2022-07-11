@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>트랜스폼 2D 변환</title>
+
+<style type="text/css">
+
+	/*
+		transform: 요소의 변형 효과를 지정한다.
+			=> transform 변환함수, ...
+			
+		transform 2D 변환 함수
+			=> translate(x, y): x축, y축 모두 이동, 대각 방향으로 이동
+			=> translateX(x): x축만 이동, 수평 이동
+			=> translateY(y): y축만 이동, 수직 이동
+			=> scale(x, y): x축, y축 모두 크기 변경 
+			=> scaleX(x): x축만 크기 변경
+			=> scaleY(y): y축만 크기 변경
+			=> rotate(각도deg): 지정된 각도 만큼 회전
+			=> skew(xdeg, ydeg): x축, y축 기울이기(비틀기)
+			=> skewX(xdeg): x축만 기울이기(비틀기)
+			=> skewY(ydeg): y축만 기울이기(비틀기)
+	*/
+
+	.box {
+		width: 200px;
+		height: 200px;
+		background-color: yellow;
+		font-size: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 50px;
+		
+		/* 애니메이션 시작 위치 */
+		/*
+		position: relative;
+		top: 0px;
+		left: 0px;
+		transition-duration: 1s;
+		*/
+		
+		/* transform: translate(100px, 30px); */ /* 요소가 단순히 이동되서 보인다. */
+		transition-duration: 1s;
+	}
+
+	.box:hover {
+		/* 애니메이션 종료 위치 */
+		/*
+		position: relative;
+		top: 100px;
+		left: 100px;
+		*/
+	
+		background-color: green;
+		
+		/* transform을 이용한 애니메이션 */
+		/* transform: translate(200px, 200px); */
+		/* transform: translateX(200px); */
+		/* transform: translateY(200px); */
+		/* transform: scale(1.5, 1.5); */
+		/* transform: scaleX(1.5); */
+		/* transform: scaleY(1.5); */
+		/* transform: rotate(1260deg); */
+		/* transform: skew(10deg, 10deg); */
+		/* transform: skewX(10deg); */
+		/* transform: skewY(10deg); */
+		
+		/* transform의 변환 함수를 2개 이상 지정하려면 띄어쓰기로 구분하면 된다. */
+		transform: translate(200px, 200px) scale(1.5, 1.5) rotate(1260deg);
+	}
+
+</style>
+
+</head>
+<body>
+
+	<div class="box">123</div>
+
+</body>
+</html>
+
+
+
+
+
+

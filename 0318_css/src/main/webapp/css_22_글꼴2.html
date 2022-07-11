@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>글꼴</title>
+
+<style type="text/css">
+
+	/*
+		color: 문자의 색을 지정한다. 기본값은 black => rgb(0, 0, 0) => #000000
+			색상 이름 => 브라우저에서 제공하는 색상 이름 => 이름은 html 색상 이름 검색
+			16진수 색상 => 16진 색상 코드는 html 색상표 검색
+		RGB => 빛의 3원색
+		RGBA => 빛의 3원색과 투명도
+		HSL => 색상, 채도, 명도
+		HSLA => 색상, 채도, 명도, 투명도
+		
+		text-align: 문자 수평 정렬 방식을 지정한다.
+			=> left(왼쪽 맞춤, 기본값), right(오른쪽 맞춤), center(가운데 맞춤), justify(양쪽 맞춤, 영문 균등)
+		letter-spacing: 글자와 글자 사이의 간격, 자간
+		word-spacing: 단어와 단어 사이의 간격
+		text-indent: 첫 줄 들여쓰기를 지정한다. 음수를 사용할 수 있고 음수를 사용하면 내어쓰기가 된다.
+		text-decoration: 문자의 장식(line)을 설정한다.
+			=> none(기본값, 선 없음), underline(밑줄), overline(윗줄), line-through(취소선, 중앙선)
+	*/
+
+	.indent {
+		/* color: red; */
+		/* color: #FF0000; */
+		color: rgb(255, 0, 0);
+		text-align: justify;
+		letter-spacing: 1px;
+		word-spacing: 3px;
+		/* text-indent에 음수 값을 지정하면 지정한 만큼 margin-left를 줘야 한다.*/
+		text-indent: -100px;
+		margin-left: 100px;
+	}
+
+	.decoration {
+		text-decoration: line-through;
+	}
+
+</style>
+
+</head>
+<body>
+
+	<div class="indent">
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+		Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+		when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		It has survived not only five centuries, but also the leap into electronic typesetting,
+		remaining essentially unchanged.
+		It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+		and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+	</div>
+
+	<div class="decoration">
+		Hello World~~~~~
+	</div>
+
+</body>
+</html>
+
+
+

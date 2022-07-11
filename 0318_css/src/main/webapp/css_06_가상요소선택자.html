@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가상 요소 선택자</title>
+
+<style type="text/css">
+
+	/*
+		가상 클래스 선택자는 ':'로 선택하고 가상 요소 선택자 '::'로 시작한다.
+		before: 요소의 내부 앞에 내용(content)을 삽입하고 스타일을 지정한다.
+		after: 요소의 내부 뒤에 내용(content)을 삽입하고 스타일을 지정한다.
+	*/
+	
+	ul li::before {
+		/* 요소 내부 앞에 들어갈 내용을 여기(content 속성)에 넣어준다. */
+		content: "숫자";
+		/* content 속성에 지정한 내용의 스타일을 지정한다. */
+		font-weight: bold;
+		color: red;
+		margin-right: 20px;
+	}
+	
+	ul li::after {
+		/* css에서 이미지를 넣으려는 경우 url() 함수를 사용한다. */
+		/* 크기 조절 없이 이미지만 넣으려면 content 속성에 바로 넣으면 된다. */
+		/* content: url("./images/android.png"); */
+		/* 이미지 크기를 조절해서 넣으려면 아래와 같은 복잡한 과정을 거쳐야 한다. */
+		content: "";
+		background-image: url("./images/android.png");
+		background-size: 25px 25px; /* content 영역에 표시되는 이미지 크기 */
+		width: 25px; /* content 영역이 차지하는 폭 */
+		height: 25px; /* content 영역이 차지하는 높이 */
+		display: inline-block;
+	}
+	
+	ol li {
+		list-style-type: none;
+	}
+	
+	ol li:before {
+		content: "";
+		width: 10px;
+		height: 10px;
+		background-color: tomato;
+		margin-right: 10px;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	
+	div::before {
+		content: "<";
+	}
+	div::after {
+		content: ">";
+	}
+	
+</style>
+
+</head>
+<body>
+
+	<ul>
+		<li>1
+			<img src="./images/java.png" width="25px">
+		</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+
+	<ol>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ol>
+
+	<!-- <div>&lt;div&gt;</div> -->
+	<div>div</div>
+	
+</body>
+</html>
+
+

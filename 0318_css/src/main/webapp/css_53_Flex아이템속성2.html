@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Flex 아이템 속성</title>
+
+<style type="text/css">
+
+	/*
+		단축 속성
+		flex => flex-grow, flex-shrink, flex-basis의 단축 속성
+		
+		개별 속성
+		flex-grow: flex 아이템의 증가 너비 비율을 설정한다.
+			=> 모든 아이템의 총 증가 너비에서 각 아이템의 증가 너비의 비율 만큼 너비를 가질 수 있다.
+			=> 만약 아이템이 3개이고 증가 너비가 1, 2, 1 이라면 각 아이템은 25%, 50%, 25%의 너비를 가진다.
+			=> 모든 아이템의 너비가 가변 너비가 아니거나 값이 0일 경우 효과가 제대로 나타나지 않는다.
+		flex-shrink: flex 아이템의 감소 너비 비율을 설정한다.
+		flex-basis: flex 아이템의 공간 분배 전 기본 너비를 설정한다.
+	*/
+
+	.container1 {
+		border: 4px solid red;
+		display: flex;
+	}
+
+	.container1 .item1 {
+		/* width: 100px; */
+		height: 100px;
+		border: 4px solid blue;
+		border-radius: 10px;
+		background-color: skyblue;
+		font-size: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	/* item2, item3, item4를 1 : 2 : 1 비율로 나타낸다. */
+	/* flex-grow 속성을 지정하면 아이템에 width 속성이 지정된 경우 정확한 비율이 반영되지 않는다. */
+	.container1 .item2 {
+		flex-grow: 1;
+	}
+	
+	.container1 .item3 {
+		flex-grow: 2;
+	}
+	
+	.container1 .item4 {
+		flex-grow: 1;
+	}
+
+	.container2 {
+		border: 4px solid red;
+		display: flex;
+	}
+
+	.container2 .item5 {
+		/* width: 100px; */
+		height: 100px;
+		border: 4px solid blue;
+		border-radius: 10px;
+		background-color: hotpink;
+		font-size: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.container2 .item6 {
+		flex-grow: 2;
+	}
+	
+	.container2 .item7 {
+		/* width를 지정하면 이 부분은 크기가 항상 일정하게 유지되고 flex-grow를 지정한 부분만 비율로 변경된다. */
+		width: 100px;
+	}
+	
+	.container2 .item8 {
+		flex-grow: 1;
+	}
+
+</style>
+
+</head>
+<body>
+
+	<div class="container1">
+		<div class="item1 item2">1</div>
+		<div class="item1 item3">2</div>
+		<div class="item1 item4">3</div>
+	</div><br/>
+
+	<div class="container2">
+		<div class="item5 item6">1</div>
+		<div class="item5 item7">2</div>
+		<div class="item5 item8">3</div>
+	</div>
+
+</body>
+</html>
+
+
+
+
