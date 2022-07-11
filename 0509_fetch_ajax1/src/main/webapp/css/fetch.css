@@ -1,0 +1,40 @@
+#normal {
+	/* float: left; */
+	background-color: hotpink;
+	width: 150px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#list {
+	/* float: left; */
+	background-color: yellowgreen;
+	width: 150px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#list2 {
+	float: left;
+	background-color: lime;
+	width: 150px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+div {
+	position: absolute;
+	margin-left: 200px;
+	top: 72px;
+	background-color: skyblue;
+	width: 800px;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
