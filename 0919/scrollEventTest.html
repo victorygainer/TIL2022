@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JSShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <link href="main.css" rel="stylesheet">
+</head>
+  <body>
+
+    <!-- The Modal -->
+    <div class="black-bg">
+      <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <form action="success.html">
+              <div class="my-3">
+                <input type="text" class="form-control" id="inputId">
+               </div>
+               <div class="my-3">
+                 <input type="password" class="form-control password" id="inputPw">
+               </div>
+               <button type="submit" class="btn btn-primary" id="submit-btn">전송</button>
+               <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form> 
+      </div>
+    </div>
+
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">JSShop</span>
+        <span class="badge bg-dark" id="modeOn">Dark 🔄</span>
+        <button class="navbar-toggler" id="navbarToggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav> 
+
+    <div style="height: 1000px;"></div>
+
+
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+    </div> 
+    
+    <script>
+      /* javaScript
+      window.addEventListener('scroll', function(){
+        //console.log(window.scrollX); // X축 이동거리 측정 
+        //console.log(window.scrollY); // Y축 이동거리 측정
+        //window.scrollTo(0,100); // 강제로 스크롤 이동
+        window.scrollBy(0,100); //현재 위치부터 강제로 스크롤하기
+      });
+      */
+
+      /*Jquery
+      $(window).on('scroll', function(){
+        //console.log($(window).scrollTop()); // 현재 스크롤바 위치 출력
+        //console.log($(window).scrollTop(100)); // 현재 스크롤바 이동
+      });*/
+
+    
+      //문제1. 스크롤바를 100px 내리면 로고 폰트사이즈를 작게 만들어라.
+        $(window).on('scroll', function() {
+            //console.log(window.scrollY);
+            if ($(window).scrollTop() > 100){
+                $('.navbar-brand').css('font-size', '20px');
+            } else {
+                $('.navbar-brand').css('font-size', '30px');
+            }
+        });
+        
+        //문제2. 박스를 끝까지 스크롤하면 alert 메세지 띄우기.
+        $('.lorem').on('scroll', function() {
+            var 스크롤양 = document.querySelector('.lorem').scrollTop;
+            var 실제높이 = document.querySelector('.lorem').scrollHeight;
+            var 높이 = document.querySelector('.lorem').clientHeight;
+            console.log(스크롤양, 실제높이, 높이);
+            if (스크롤양 + 높이 > 264 - 10){
+                alert('문서의 끝입니다.')
+            }
+        });
+
+        //현재페이지 스크롤체크 
+        document.querySelector('html').scrollHeight;
+        document.querySelector('html').clientHeight;
+        //document.querySelector('html').scrollTop;
+        window.scrollY
+
+    </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
