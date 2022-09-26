@@ -31,23 +31,23 @@
         for (var i = 0 ; i < products.length ; i++){
             var div = document.createElement('div');
                 div.setAttribute('class', 'col-sm-4 add-products');
-            document.querySelector('.row').appendChild(div); 
+                document.querySelector('.row').appendChild(div); 
             //console.log(document.querySelectorAll('.add-products')[i]);
 
             var img = document.createElement('img');
                 img.setAttribute('src', 'https://via.placeholder.com/600');
                 img.setAttribute('class', 'w-100');
-            document.querySelectorAll('.col-sm-4')[i].appendChild(img);
+                document.querySelectorAll('.col-sm-4')[i].appendChild(img);
 
             var h5 = document.createElement('h5');
             var h5Text = document.createTextNode(products[i].title);
-            h5.appendChild(h5Text);
-            document.querySelectorAll('.col-sm-4')[i].appendChild(h5);
+                h5.appendChild(h5Text);
+                document.querySelectorAll('.col-sm-4')[i].appendChild(h5);
 
             var p = document.createElement('p');
             var pText = document.createTextNode(products[i].price);
-            p.appendChild(pText);
-            document.querySelectorAll('.col-sm-4')[i].appendChild(p);
+                p.appendChild(pText);
+                document.querySelectorAll('.col-sm-4')[i].appendChild(p);
         };
 
 
