@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!--
+            <div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100">
+                <h5>Card title</h5>
+                <p>가격 : 70000</p>
+            </div>-->
+        </div>
+      </div> 
+    <script>
+        var products = [
+            { id : 0, price : 70000, title : 'Blossom Dress' },
+            { id : 1, price : 50000, title : 'Springfield Shirt' },
+            { id : 2, price : 60000, title : 'Black Monastery' }
+        ];
+
+        //console.log(products[0].title);
+
+        for (var i = 0 ; i < products.length ; i++){
+            var div = document.createElement('div');
+                div.setAttribute('class', 'col-sm-4 add-products');
+            document.querySelector('.row').appendChild(div); 
+            //console.log(document.querySelectorAll('.add-products')[i]);
+
+            var img = document.createElement('img');
+                img.setAttribute('src', 'https://via.placeholder.com/600');
+                img.setAttribute('class', 'w-100');
+            document.querySelectorAll('.col-sm-4')[i].appendChild(img);
+
+            var h5 = document.createElement('h5');
+            var h5Text = document.createTextNode(products[i].title);
+            h5.appendChild(h5Text);
+            document.querySelectorAll('.col-sm-4')[i].appendChild(h5);
+
+            var p = document.createElement('p');
+            var pText = document.createTextNode(products[i].price);
+            p.appendChild(pText);
+            document.querySelectorAll('.col-sm-4')[i].appendChild(p);
+        };
+
+
+        console.log(document.querySelectorAll('.add-products'));
+
+        
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
