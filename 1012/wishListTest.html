@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!--
+            <div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100">
+                <h5>Card title</h5>
+                <p>가격 : 70000</p>
+            </div>-->
+        </div>
+      </div> 
+    <script>
+        var products = [
+            { id : 0, price : 70000, title : 'Blossom Dress' },
+            { id : 1, price : 50000, title : 'Springfield Shirt' },
+            { id : 2, price : 60000, title : 'Black Monastery' }
+        ];
+
+        function showMoreProducts(products) {
+        
+        var cart = []
+            products.forEach((a, i)=>{
+        var 템플릿 = 
+            `<div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100">
+                <h5>${a.title}</h5>
+                <p>가격 : ${a.price}</p>
+                <button class="buy" value="${a.title}">구매</button>
+                </div>`;
+                $('.row').append(템플릿);
+            });
+           
+            $('.buy').on('click', function(e){
+                //console.log(e.currentTarget.value);
+                cart.push(e.currentTarget.value);
+                //console.log(cart);
+                var newCart = JSON.stringify(cart);
+                localStorage.setItem('cart', newCart);
+                //console.log(JSON.parse(localStorage.getItem('cart')));
+            });
+        };
+
+        $(document).ready(function(){
+            showMoreProducts(products);   
+        });
+
+        console.log(products);
+        console.log(products[0].title);
+
+
+        // local storage 다루는 법
+        // localStorage.setItem('이름', 'Jeong')
+        // localStorage.getItem('이름');
+        // localStorage.removeItem('이름');
+
+        // var arr = [1,2,3];
+        // var newArr = JSON.stringify(arr);
+
+        // localStorage.setItem('num',newArr);
+        // var outLet = localStorage.getItem('num');
+        // console.log(outLet);
+        // console.log(JSON.parse(outLet));
+
+        // local storage를 이용해서 장바구니 기능 구현하기
+
+
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
