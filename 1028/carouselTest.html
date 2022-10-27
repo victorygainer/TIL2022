@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JSShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <link href="main.css" rel="stylesheet">
+</head>
+  <body>
+
+    <!-- The Modal -->
+    <div class="black-bg">
+      <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <form action="success.html">
+              <div class="my-3">
+                <input type="text" class="form-control" id="inputId">
+               </div>
+               <div class="my-3">
+                 <input type="password" class="form-control password" id="inputPw">
+               </div>
+               <button type="submit" class="btn btn-primary" id="submit-btn">전송</button>
+               <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form> 
+      </div>
+    </div>
+
+    <script>
+
+      $('#submit-btn').on('click', function(e) {
+        var id = $('#inputId').val();
+        var pw = $('#inputPw').val();
+        console.log(id);
+        if ( id == ''){
+          alert("ID를 입력하세요.");
+          e.preventDefault();
+        }else if(!/\S+@\S+\.\S+/.test(id)){
+            alert("올바른 이메일 형식으로 입력하세요.");
+            e.preventDefault();
+        }else if(pw == ''){
+          alert("비밀번호를 입력하세요.")
+          e.preventDefault();
+        }else if(pw.length < 6){
+          alert("비밀번호는 6자 이상 입력하세요.");
+          e.preventDefault();
+        }else if(!/A-Z/.test(pw)){
+          alert("비밀번호 입력 시 최소 한글자는 대문자로 입력하세요.");
+          e.preventDefault();
+        }
+
+      });
+
+    </script>
+
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">JSShop</span>
+        <span class="badge bg-dark" id="modeOn">Dark 🔄</span>
+        <button class="navbar-toggler" id="navbarToggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav> 
+    
+    <script>
+      var count = 0;
+
+      $('#modeOn').on('click', function(){
+        count += 1
+        console.log(count);
+        if (count % 2 == 1){
+          $('#modeOn').html('Light 🔄');
+          $('#modeOn').addClass('bg-white');
+          $('body').addClass('dark')
+        }else {
+          $('#modeOn').html('Dark 🔄');
+          $('#modeOn').removeClass('bg-white');
+          $('body').removeClass('dark')
+
+        }
+      });
+      
+    </script>
+
+
+    <ul class="list-group">
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">A fourth item</li>
+      <li class="list-group-item">And a fifth one</li>
+    </ul> 
+
+    <div class="main-bg">
+      <h4>Shirts on Sale</h4>
+      <button id="login-btn">로그인</button>
+    </div>
+    <div class="alert alert-danger">
+        5초 이내 구매 시 사은품 증정!
+    </div>
+    <div style="overflow: hidden">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="car1.png">
+            </div>
+            <div class="slide-box">
+                <img src="car2.png">
+            </div>
+            <div class="slide-box">
+                <img src="car3.png">
+            </div>
+        </div>
+    </div>
+
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="slide-4">다음</button>
+    <button class="slide-5">이전</button>
+
+    <script>
+      var 시작좌표 = 0;
+      var 현재좌표 = 0;
+      var clickStatus = false;
+      
+        $('.slide-box').eq(0).on('mousedown', function(e) {
+          console.log('mousedown');
+          시작좌표 = e.clientX;
+          clickStatus = true;
+        });
+
+        $('.slide-box').eq(0).on('mousemove', function(e) {
+          //console.log(e.clientX);
+            현재좌표 = e.clientX - 시작좌표;
+        });
+
+        $('.slide-box').eq(0).on('mouseup', function(e) {
+          console.log('mouseup');
+          if (현재좌표 < -200){
+              $('.slide-container').css('transform', 'translatex(-100vw)');
+            } else {
+              $('.slide-container').css('transform', `translatex(0vw)`);
+            }
+          clickStatus = false;
+        });
+
+        $('.slide-box').eq(1).on('mousedown', function(e) {
+          console.log('mousedown');
+          시작좌표 = e.clientX;
+          clickStatus = true;
+        });
+
+        $('.slide-box').eq(1).on('mousemove', function(e) {
+          //console.log(e.clientX);
+            현재좌표 = e.clientX - 시작좌표;
+        });
+
+        $('.slide-box').eq(1).on('mouseup', function(e) {
+          console.log('mouseup');
+          if (현재좌표 < -200){
+            $('.slide-container').css('transform', 'translatex(-200vw)');
+          } else if (현재좌표 > 200){
+            $('.slide-container').css('transform', 'translatex(0vw)');
+          } else {
+            $('.slide-container').css('transform', `translatex(-100vw)`);
+          }
+          clickStatus = false;
+        });
+
+        $('.slide-box').eq(2).on('mousedown', function(e) {
+          console.log('mousedown');
+          시작좌표 = e.clientX;
+          clickStatus = true;
+        });
+
+        $('.slide-box').eq(2).on('mousemove', function(e) {
+          //console.log(e.clientX);
+            현재좌표 = e.clientX - 시작좌표;
+        });
+
+        $('.slide-box').eq(2).on('mouseup', function(e) {
+          console.log('mouseup');
+          if (현재좌표 > 200){
+            $('.slide-container').css('transform', 'translatex(-100vw)');
+          } else {
+            $('.slide-container').css('transform', `translatex(-200vw)`);
+          }
+          clickStatus = false;
+        });
+
+      //var count = 0;
+      var count = 1;
+      $('.slide-1').on('click',function(){
+        $('.slide-container').css('transform', 'translateX(0vw)')
+      });
+      $('.slide-2').on('click',function(){
+        $('.slide-container').css('transform', 'translateX(-100vw)')
+      });
+      $('.slide-3').on('click',function(){
+        $('.slide-container').css('transform', 'translateX(-200vw)')
+      });
+      $('.slide-4').on('click',function(){
+        /*count += 1
+        console.log(count);
+        if (count % 3 == 1){
+          $('.slide-container').css('transform', 'translateX(0vw)')
+        } else if (count % 3 == 2 ){
+          $('.slide-container').css('transform', 'translateX(-100vw)')
+        } else {
+          $('.slide-container').css('transform', 'translateX(-200vw)')
+        }*/
+        /*if (count == 1){
+          $('.slide-container').css('transform', 'translateX(' + count * -100 + 'vw)');
+          count++;
+        } else if (count == 2){
+          $('.slide-container').css('transform', 'translateX(' + count * -100 + 'vw)');
+          count++;
+        } else if (count == 3){
+          $('.slide-container').css('transform', 'translateX(' + count * -100 + 'vw)');
+          count = 1;
+        }*/
+
+        $('.slide-container').css('transform', 'translateX(' + count * -100 + 'vw)');
+          count++;
+
+      });
+      $('.slide-5').on('click',function(){
+        /*count += 1
+        console.log(count);
+        if (count % 3 == 1){
+          $('.slide-container').css('transform', 'translateX(0vw)')
+        } else if (count % 3 == 2 ){
+          $('.slide-container').css('transform', 'translateX(-100vw)')
+        } else {
+          $('.slide-container').css('transform', 'translateX(-200vw)')
+        }*/
+        if (count == 1){
+          $('.slide-container').css('transform', 'translateX(-200vw)');
+          count++;
+        } else if (count == 2){
+          $('.slide-container').css('transform', 'translateX(-100vw)');
+          count++;
+        } else if (count == 3){
+          $('.slide-container').css('transform', 'translateX(0vw)');
+          count = 1;
+        }
+      });
+
+
+
+      $('#login-btn').on('click', function(){
+        $('.black-bg').addClass('show-modal');
+      });
+
+      $('.btn-close').on('click', function(){
+        $('.black-bg').removeClass('show-modal');
+      });
+
+      $('.btn-danger').on('click', function(){
+        $('.black-bg').removeClass('show-modal');
+      });
+
+      document.querySelectorAll('.list-group');
+
+      document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', 
+      function(){
+        document.getElementsByClassName('list-group')[0].classList.toggle('show');
+      })
+
+      setTimeout(function(){
+        $('.alert').html('4초 이내 구매 시 사은품 증정!');
+      }, 1000);
+
+      setTimeout(function(){
+        $('.alert').html('3초 이내 구매 시 사은품 증정!');
+      }, 2000);
+
+      setTimeout(function(){
+        $('.alert').html('2초 이내 구매 시 사은품 증정!');
+      }, 3000);
+
+      setTimeout(function(){
+        $('.alert').html('1초 이내 구매 시 사은품 증정!');
+      }, 4000);
+
+      setTimeout(function(){
+        $('.alert').hide();
+      }, 5000)
+
+    </script>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
